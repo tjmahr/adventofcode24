@@ -20,8 +20,9 @@ example_data_02(example = 1)
 1.}
 }
 \value{
-For Part One, \code{f02a(x)} returns .... For Part Two,
-\code{f02b(x)} returns ....
+For Part One, \code{f02a_count_safe_reports(x)} returns the number of safe
+reports. For Part Two, \code{f02b_count_safe_dampened_reports(x)} returns the
+number of safe reports if we discard one number from each report.
 }
 \description{
 \href{https://adventofcode.com/2024/day/2}{Red-Nosed Reports}
@@ -89,11 +90,35 @@ safe?}
 
 \strong{Part Two}
 
-\emph{(Use have to manually add this yourself.)}
+The engineers are surprised by the low number of safe reports until they
+realize they forgot to tell you about the Problem
+Dampener.
 
-\emph{(Try using \code{convert_clipboard_html_to_roxygen_md()})}
+The Problem Dampener is a reactor-mounted module that lets the reactor
+safety systems \emph{tolerate a single bad level} in what would otherwise be
+a safe report. It\'s like the bad level never happened!
+
+Now, the same rules apply as before, except if removing a single level
+from an unsafe report would make it safe, the report instead counts as
+safe.
+
+More of the above example\'s reports are now safe:
+\itemize{
+\item \verb{7 6 4 2 1}: \emph{Safe} without removing any level.
+\item \verb{1 2 7 8 9}: \emph{Unsafe} regardless of which level is removed.
+\item \verb{9 7 6 2 1}: \emph{Unsafe} regardless of which level is removed.
+\item \code{1 }\emph{\code{3}}\verb{ 2 4 5}: \emph{Safe} by removing the second level, \code{3}.
+\item \verb{8 6 }\emph{\code{4}}\verb{ 4 1}: \emph{Safe} by removing the third level, \code{4}.
+\item \verb{1 3 6 7 9}: \emph{Safe} without removing any level.
+}
+
+Thanks to the Problem Dampener, \emph{\code{4}} reports are actually \emph{safe}!
+
+Update your analysis by handling situations where the Problem Dampener
+can remove a single level from unsafe reports. \emph{How many reports are now
+safe?}
 }
 \examples{
-f02a(example_data_02())
-f02b()
+f02a_count_safe_reports(example_data_02())
+f02b_count_safe_dampened_reports(example_data_02())
 }

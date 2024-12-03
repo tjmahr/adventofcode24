@@ -122,8 +122,8 @@ Or are they?
 
 The Historians can\'t agree on which group made the mistakes \emph{or} how to
 read most of the Chief\'s handwriting, but in the commotion you notice
-an interesting detail: [a
-lot]{title="We were THIS close to summoning the Alot of Location IDs!"}
+an interesting detail: a
+lot
 of location IDs appear in both lists! Maybe the other numbers aren\'t
 location IDs at all but rather misinterpreted handwriting.
 

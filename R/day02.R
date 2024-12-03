@@ -67,8 +67,8 @@
 #' **Part Two**
 #'
 #' The engineers are surprised by the low number of safe reports until they
-#' realize they forgot to tell you about the [Problem
-#' Dampener]{title="I need to get one of these!"}.
+#' realize they forgot to tell you about the Problem
+#' Dampener.
 #'
 #' The Problem Dampener is a reactor-mounted module that lets the reactor
 #' safety systems *tolerate a single bad level* in what would otherwise be
@@ -115,7 +115,7 @@ f02b_count_safe_dampened_reports <- function(x) {
     f02_helper() |>
     lapply(function(a) {
       a |>
-        combn(length(a) - 1) |>
+        utils::combn(length(a) - 1) |>
         apply(2, f02_is_safe_report) |>
         any()
       }
