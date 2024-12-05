@@ -30,73 +30,12 @@ sum of mul() statements.
 \details{
 \strong{Part One}
 
-"Our computers are having issues, so I have no idea if we have any Chief
-Historians
-\if{html}{\out{<span title="There's a spot reserved for Chief Historians between the green toboggans and the red toboggans. They've never actually had any Chief Historians in stock, but it's best to be prepared.">}}in
-stock\if{html}{\out{</span>}}! You're welcome to check the warehouse, though," says the
-mildly flustered shopkeeper at the \href{/2020/day/2}{North Pole Toboggan Rental Shop}. The Historians head out to take a look.
-
-The shopkeeper turns to you. \"Any chance you can see why our computers
-are having issues again?\"
-
-The computer appears to be trying to run a program, but its memory (your
-puzzle input) is \emph{corrupted}. All of the instructions have been jumbled
-up!
-
-It seems like the goal of the program is just to \emph{multiply some
-numbers}. It does that with instructions like \code{mul(X,Y)}, where \code{X} and
-\code{Y} are each 1-3 digit numbers. For instance, \code{mul(44,46)} multiplies
-\code{44} by \code{46} to get a result of \code{2024}. Similarly, \code{mul(123,4)} would
-multiply \code{123} by \code{4}.
-
-However, because the program\'s memory has been corrupted, there are
-also many invalid characters that should be \emph{ignored}, even if they look
-like part of a \code{mul} instruction. Sequences like \verb{mul(4*}, \verb{mul(6,9!},
-\verb{?(12,34)}, or \code{mul ( 2 , 4 )} do \emph{nothing}.
-
-For example, consider the following section of corrupted memory:
-
-\if{html}{\out{<div class="sourceCode">}}\preformatted{xmul(2,4)\%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))
-}\if{html}{\out{</div>}}
-
-Only the four highlighted sections are real \code{mul} instructions. Adding
-up the result of each instruction produces \emph{\code{161}}
-(\code{2*4 + 5*5 + 11*8 + 8*5}).
-
-Scan the corrupted memory for uncorrupted \code{mul} instructions. \emph{What do
-you get if you add up all of the results of the multiplications?}
+Extract mul(x,y) instructions, run them, sum them.
 
 \strong{Part Two}
 
-As you scan through the corrupted memory, you notice that some of the
-conditional statements are also still intact. If you handle some of the
-uncorrupted conditional statements in the program, you might be able to
-get an even more accurate result.
-
-There are two new instructions you\'ll need to handle:
-\itemize{
-\item The \code{do()} instruction \emph{enables} future \code{mul} instructions.
-\item The \verb{don't()} instruction \emph{disables} future \code{mul} instructions.
-}
-
-Only the \emph{most recent} \code{do()} or \verb{don't()} instruction applies. At the
-beginning of the program, \code{mul} instructions are \emph{enabled}.
-
-For example:
-
-\if{html}{\out{<div class="sourceCode">}}\preformatted{xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))
-}\if{html}{\out{</div>}}
-
-This corrupted memory is similar to the example from before, but this
-time the \code{mul(5,5)} and \code{mul(11,8)} instructions are \emph{disabled} because
-there is a \verb{don't()} instruction before them. The other \code{mul}
-instructions function normally, including the one at the end that gets
-re-\emph{enabled} by a \code{do()} instruction.
-
-This time, the sum of the results is \emph{\code{48}} (\code{2*4 + 8*5}).
-
-Handle the new instructions; \emph{what do you get if you add up all of the
-results of just the enabled multiplications?}
+Extract mul(x,y) instructions, run them, sum them, but ignore any mul()s
+between don't() and do() statements.
 }
 \examples{
 f03a_compute_muls(example_data_03())

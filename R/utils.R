@@ -10,3 +10,13 @@ str_count <- function(x, pattern) {
     lapply(function(x) sum(x > 0)) |>
     unlist()
 }
+
+vec_split_at_index <- function(vec, i) {
+  # subset() does the right thing on i == 1, split() does not
+  s <- seq_along(vec)
+  list(
+    pre = subset(vec, s < i),
+    pivot = subset(vec, s == i),
+    post = subset(vec, s > i)
+  )
+}

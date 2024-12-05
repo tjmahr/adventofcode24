@@ -30,99 +30,11 @@ MAS/SAM xs in the grid.
 \details{
 \strong{Part One}
 
-\"Looks like the Chief\'s not here. Next!\" One of The Historians pulls
-out a device and pushes the only button on it. After a brief flash, you
-recognize the interior of the \href{/2019/day/10}{Ceres monitoring station}!
-
-As the search for the Chief continues, a small Elf who lives on the
-station tugs on your shirt; she\'d like to know if you could help her
-with her \emph{word search} (your puzzle input). She only has to find one
-word: \code{XMAS}.
-
-This word search allows words to be horizontal, vertical, diagonal,
-written backwards, or even overlapping other words. It\'s a little
-unusual, though, as you don\'t merely need to find one instance of
-\code{XMAS} - you need to find \emph{all of them}. Here are a few ways \code{XMAS}
-might appear, where irrelevant characters have been replaced with \code{.}:
-
-\if{html}{\out{<div class="sourceCode">}}\preformatted{..X...
-.SAMX.
-.A..A.
-XMAS.S
-.X....
-}\if{html}{\out{</div>}}
-
-The actual word search will be full of letters instead. For example:
-
-\if{html}{\out{<div class="sourceCode">}}\preformatted{MMMSXXMASM
-MSAMXMSMSA
-AMXSXMAAMM
-MSAMASMSMX
-XMASAMXAMM
-XXAMMXXAMA
-SMSMSASXSS
-SAXAMASAAA
-MAMMMXMMMM
-MXMXAXMASX
-}\if{html}{\out{</div>}}
-
-In this word search, \code{XMAS} occurs a total of \emph{\code{18}} times; here\'s the
-same word search again, but where letters not involved in any \code{XMAS}
-have been replaced with \code{.}:
-
-\if{html}{\out{<div class="sourceCode">}}\preformatted{....XXMAS.
-.SAMXMS...
-...S..A...
-..A.A.MS.X
-XMASAMX.MM
-X.....XA.A
-S.S.S.S.SS
-.A.A.A.A.A
-..M.M.M.MM
-.X.X.XMASX
-}\if{html}{\out{</div>}}
-
-Take a look at the little Elf\'s word search. \emph{How many times does
-\code{XMAS} appear?}
+Find the word XMAS in a word search.
 
 \strong{Part Two}
 
-The Elf looks quizzically at you. Did you misunderstand the assignment?
-
-Looking for the instructions, you flip over the word search to find that
-this isn\'t actually an \emph{\code{XMAS}} puzzle; it\'s an
-\emph{\code{X-MAS}}
-puzzle in which you\'re supposed to find two \code{MAS} in the shape of an
-\code{X}. One way to achieve that is like this:
-
-\if{html}{\out{<div class="sourceCode">}}\preformatted{M.S
-.A.
-M.S
-}\if{html}{\out{</div>}}
-
-Irrelevant characters have again been replaced with \code{.} in the above
-diagram. Within the \code{X}, each \code{MAS} can be written forwards or
-backwards.
-
-Here\'s the same example from before, but this time all of the \code{X-MAS}es
-have been kept instead:
-
-\if{html}{\out{<div class="sourceCode">}}\preformatted{.M.S......
-..A..MSMS.
-.M.S.MAA..
-..A.ASMSM.
-.M.S.M....
-..........
-S.S.S.S.S.
-.A.A.A.A..
-M.M.M.M.M.
-..........
-}\if{html}{\out{</div>}}
-
-In this example, an \code{X-MAS} appears \emph{\code{9}} times.
-
-Flip the word search from the instructions back over to the word search
-side and try again. \emph{How many times does an \code{X-MAS} appear?}
+Find cases in the word search where two copies of MAS form an X.
 }
 \examples{
 f04a_count_xmas(example_data_04())
